@@ -51,11 +51,27 @@ int main() {
     p[4] = 50;
 
 
-
     for(int i=0; i<5; i++) {
         cout << p[i] << endl;
     } 
     
     delete [] p;
+
+    Rectangle b = {10, 5};
+    Rectangle *sp = &b;
+
+    (*sp).length = 15;
+    cout << (*sp).length << endl;
+    sp->length = 20;
+    cout << sp->length << endl;
+
+    Rectangle *d;
+    // d=(struct Rectangle *)malloc(sizeof(struct Rectangle));
+    d=new Rectangle;
+    d->length = 7;
+    d->breath = 8;
+
+    cout << "Length: " << d->length << "Breath: " << d->breath << endl;
+
     return 0;
 }
