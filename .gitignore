@@ -1,1 +1,4 @@
 *.exe
+
+# ignored dirs
+rough_folder/
