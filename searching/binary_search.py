@@ -17,8 +17,10 @@ def bin_search(arr: list, x: int) -> int:
     else:
         return -1
 
+
 def main():
     arr = [1, 10, 10, 10, 20, 20, 40]
     print(bin_search(arr, 10))
- 
+
+
 main()

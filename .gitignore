@@ -2,3 +2,8 @@
 
 # ignored dirs
 rough_folder/
+
+venv/
+
+# pyenv config
+.python-version

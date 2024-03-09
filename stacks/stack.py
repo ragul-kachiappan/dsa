@@ -1,6 +1,8 @@
 class Empty(Exception):
     """Error at attempting to access an element from an empty container."""
+
     pass
+
 
 class ArrayStack:
     """LIFO stack implementation using a python list as underlying storage."""
@@ -28,7 +30,7 @@ class ArrayStack:
         """
 
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty("Stack is empty")
         return self._data[-1]
 
     def pop(self):
@@ -37,6 +39,5 @@ class ArrayStack:
         Raise Empty exception if the stack is empty.
         """
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty("Stack is empty")
         return self._data.pop()
-
