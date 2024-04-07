@@ -7,3 +7,6 @@ venv/
 
 # pyenv config
 .python-version
+
+# vscode
+.vscode
