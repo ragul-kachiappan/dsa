@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "pre-commit>=4.5.1",
-    "ruff>=0.14.10",
+    "ruff>=0.14.11",
 ]
 
 [tool.ruff]
@@ -37,20 +37,42 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    ".venv",
 ]
+
 line-length = 88
 indent-width = 4
-target-version = "py312"
+target-version = "py313"
 
 [tool.ruff.lint]
-select = ["E", "F", "B", "C", "B9"]
-ignore = []
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "B",   # flake8-bugbear
+    "C",   # mccabe complexity (C901)
+    "B9",  # flake8-bugbear opinionated warnings
+    "W",   # pycodestyle warnings
+    "T20", # flake8-print (catches print statements)
+    "I",   # isort import sorting
+]
+
+ignore = [
+    "E266",  # Too many leading '#' for block comment
+    "E501",  # Line too long (formatter handles this)
+]
+
 fixable = ["ALL"]
+
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.lint.mccabe]
 max-complexity = 20
 
+[tool.ruff.lint.isort]
+known-third-party = []
+split-on-trailing-comma = true
+lines-after-imports = 2
+force-single-line = false
 
 [tool.ruff.format]
 quote-style = "double"
