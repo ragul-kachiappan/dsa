@@ -15,7 +15,9 @@ class ArrayQueue:
             None
         ] * ArrayQueue.DEFAULT_CAPACITY  # variable that holds the queue.
         self._size = 0  # variable that holds the current size of the queue.
-        self._front = 0  # variable that holds the current index of the front of the queue.
+        self._front = (
+            0  # variable that holds the current index of the front of the queue.
+        )
 
     def __len__(self) -> int:
         """Return the size of the queue."""
@@ -68,9 +70,7 @@ class ArrayQueue:
         old = self._data
         self._data = [None] * cap
         walk = self._front
-        for k in range(
-            len(self._size)
-        ):  # consider only elements in current queue
+        for k in range(len(self._size)):  # consider only elements in current queue
             self._data[k] = old[walk]  # essentially shifting
             walk = (walk + 1) % len(old)
         self._front = 0  # reset the front index
@@ -89,7 +89,9 @@ class ArrayDeque:
             None
         ] * ArrayDeque.DEFAULT_CAPACITY  # variable to hold the python list
         self._size = 0  # variable to hold the current size of the queue
-        self._front = 0  # variable to hold the current index position of the front of the queue.
+        self._front = (
+            0  # variable to hold the current index position of the front of the queue.
+        )
 
     def __repr__(self):
         return str(self._data)

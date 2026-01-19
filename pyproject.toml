@@ -52,7 +52,7 @@ select = [
     "C",   # mccabe complexity (C901)
     "B9",  # flake8-bugbear opinionated warnings
     "W",   # pycodestyle warnings
-    "T20", # flake8-print (catches print statements)
+   # "T20", # flake8-print (catches print statements)
     "I",   # isort import sorting
 ]
 

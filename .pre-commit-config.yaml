@@ -10,11 +10,14 @@ exclude: |
         .*\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$
     )
 repos:
--   repo: https://github.com/astral-sh/ruff-pre-commit
+  - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.14.11
     hooks:
-    -   id: ruff
-        types_or: [python, pyi, jupyter]
-        args: ["check", "--select", "I", "--fix"]
-    -   id: ruff-format
-        types_or: [python, pyi, jupyter]
+      # Linting
+      - id: ruff-check
+        types_or: [python, pyi]
+        args: ["--fix"]
+
+      # Formatting
+      - id: ruff-format
+        types_or: [python, pyi]
