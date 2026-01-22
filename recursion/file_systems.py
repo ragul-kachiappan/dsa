@@ -1,4 +1,4 @@
-# compute disk usage for a given file system path recursively
+# compute disk usage for a given file system path recursively. Example of multiple recursion as we make recursive call for every path under a directory
 import os
 
 
