@@ -21,6 +21,15 @@ def reverse(S: list[int], start, stop):
         reverse(S, start + 1, stop - 1)
 
 
+# Reversing n elements of a sequence iteratively, eliminating tail recursion
+def reverse_iterative(S: list[int]):
+    start = 0
+    stop = len(S) - 1
+    while start < stop - 1:
+        S[start], S[stop] = S[stop], S[start]
+        start, stop = start + 1, stop - 1
+
+
 #######################################################################################
 # Computing power. Like pow(number, exp), O(n) time complexity
 # solution 1: base n = 0 would produce 1, otherwise, its x * power(x, n-1)
